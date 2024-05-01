@@ -1,5 +1,5 @@
-
-
+import { getAllTodosForUser } from "../api/TodoApiService";
+import {useState, useEffect} from 'react';
 
 export default function ListToDoComponent(){
     
@@ -9,13 +9,19 @@ export default function ListToDoComponent(){
 
 
 
-    const todos = [ {id: "1", item: "Learn AWS", done: false, targetDate: targetDate},
-                    {id: "2", item: "Learn Spring", done: false, targetDate: targetDate},
-                    {id: "3", item: "Learn DevOps", done: false, targetDate: targetDate},]
+    const [todos, setTodos] = useState([])
     
     
+    function refreshTodos(){
+        getAllTodosForUser("user")
+            .then( (response) => setTodos(response.data))
+            .catch( (error) => console.log(error))
+            .finally( () => console.log("cleanup"))
+    }
     
-    
+    useEffect(
+        () => refreshTodos(),[]
+    )
     
     return(
         <div className="container">
@@ -25,7 +31,7 @@ export default function ListToDoComponent(){
                     <thead>
                         <tr>
                             <td>id</td>
-                            <td>item</td>
+                            <td>Description</td>
                             <td>Status</td>
                             <td>Target Date</td>
                         </tr>
@@ -36,9 +42,9 @@ export default function ListToDoComponent(){
                                 todo => (
                                     <tr key={todo.id}>
                                         <td>{todo.id}</td>
-                                        <td>{todo.item}</td>
+                                        <td>{todo.description}</td>
                                         <td>{todo.done.toString()}</td>
-                                        <td>{todo.targetDate.toDateString()}</td>
+                                        <td>{todo.targetDate.toString()}</td>
                                     </tr>
                                 )
                             )
