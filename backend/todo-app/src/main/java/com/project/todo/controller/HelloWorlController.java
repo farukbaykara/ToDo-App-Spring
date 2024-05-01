@@ -2,10 +2,7 @@ package com.project.todo.controller;
 
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.project.todo.dto.HelloWorld;
 
@@ -19,6 +16,11 @@ public class HelloWorlController {
     @GetMapping("/hello")
     public ResponseEntity<HelloWorld> getHello() {
         return ResponseEntity.ok().body(helloWorld);
+    }
+
+    @GetMapping("/hello/{name}")
+    public ResponseEntity<HelloWorld> getHelloName(@PathVariable String name) {
+        return ResponseEntity.ok().body(new HelloWorld("Hello " + name));
     }
 
 }
