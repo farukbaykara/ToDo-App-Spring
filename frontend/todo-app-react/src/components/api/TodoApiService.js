@@ -14,3 +14,13 @@ export function getAllTodosForUser(username){
         }
     })
 }
+
+
+export function deleteTodosForUser(username, id){
+    return apiClient.delete(`/api/users/${username}/todos/${id}`, {},{
+        auth: {
+        username: "user",
+        password: "password"
+        }
+    })
+}

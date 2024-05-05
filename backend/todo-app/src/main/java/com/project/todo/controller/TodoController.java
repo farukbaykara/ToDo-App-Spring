@@ -35,8 +35,8 @@ public class TodoController {
         }
     }
 
-    @DeleteMapping("/api/users/{username}/todos/{id}")
-    public ResponseEntity<Void> deleteTodoById(@PathVariable String username, @PathVariable long id) {
+    @DeleteMapping("/api/users/user/todos/{id}")
+    public ResponseEntity<Void> deleteTodoById(@PathVariable long id) {
         todoService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
