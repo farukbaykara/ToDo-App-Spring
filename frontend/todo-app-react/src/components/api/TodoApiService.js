@@ -24,3 +24,12 @@ export function deleteTodosForUser(username, id){
         }
     })
 }
+
+export function getTodosForUser(username, id){
+    return apiClient.get(`/api/users/${username}/todos/${id}`, {},{
+        auth: {
+        username: "user",
+        password: "password"
+        }
+    })
+}
