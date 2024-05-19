@@ -15,8 +15,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 
 
-@EnableWebSecurity
-@Configuration
+//@EnableWebSecurity
+//@Configuration
 public class WebSecurityConfig{
 
     //Filter chain
@@ -35,7 +35,7 @@ public class WebSecurityConfig{
                         .authorizeHttpRequests(
                                 auth ->
                                         auth
-                                                .requestMatchers("*", "/**").permitAll()
+                                                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                                                 .anyRequest().authenticated()
                         )
                         .httpBasic(Customizer.withDefaults())

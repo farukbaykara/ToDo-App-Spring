@@ -1,25 +1,13 @@
 import axios from 'axios'
 
-const apiClient = axios.create({
-    baseURL: 'http://localhost:8080'
-})
-
-
+import {apiClient} from './ApiClient'
 
 export function getHelloWorld(){
-    return apiClient.get('/api/hello', {},{
-        auth: {
-        username: "user",
-        password: "password"
-        }
-    })
+    return apiClient.get('/api/hello', {},{})
 }
 
-export function getHelloWorldName(username){
-    return apiClient.get(`/api/hello/${username}`, {},{
-        auth: {
-        username: "user",
-        password: "password"
-        }
-    })
+export function getHelloWorldName(username,token){
+    return apiClient.get(`/api/hello/${username}`, {
+        headers: {Authorization: token}
+    },{})
 }

@@ -12,6 +12,12 @@ public class HelloWorlController {
 
     HelloWorld helloWorld = new HelloWorld("Hello World");
 
+    @GetMapping("/basicauth")
+    public ResponseEntity<String> basicAuth() {
+
+        return ResponseEntity.ok().body("Success");
+    }
+
 
     @GetMapping("/hello")
     public ResponseEntity<HelloWorld> getHello() {

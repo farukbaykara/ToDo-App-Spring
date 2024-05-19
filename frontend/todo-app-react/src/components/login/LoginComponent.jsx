@@ -28,8 +28,8 @@ export default function LoginComponent(){
         setPassword(event.target.value);
     }
 
-    function handleLoginButton(){
-        if(authContext.login(username,password)){
+    async function handleLoginButton(){
+        if(await authContext.login(username,password)){
             navigate(`/welcome/${username}`)
         }
         else{
