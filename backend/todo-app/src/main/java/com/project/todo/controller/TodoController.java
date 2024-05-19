@@ -4,10 +4,7 @@ package com.project.todo.controller;
 import com.project.todo.dto.TodoDto;
 import com.project.todo.service.TodoService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -39,6 +36,24 @@ public class TodoController {
     public ResponseEntity<Void> deleteTodoById(@PathVariable long id) {
         todoService.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/api/users/{username}/todos/{id}")
+    public ResponseEntity<TodoDto> updateTodo(@PathVariable String username, @PathVariable long id, @RequestBody TodoDto todo) {
+
+        todoService.updateTodo(todo);
+        return ResponseEntity.ok().body(todo);
+    }
+
+    @PostMapping("/api/users/{username}/todos")
+    public ResponseEntity<TodoDto> addTodo(@PathVariable String username, @RequestBody TodoDto todo) {
+        TodoDto newTodo = todoService.addTodo(
+                username,
+                todo.getDescription(),
+                todo.getTargetDate(),
+                todo.isDone()
+        );
+        return ResponseEntity.status(201).body(newTodo);
     }
 
 }

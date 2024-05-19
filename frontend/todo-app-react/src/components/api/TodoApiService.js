@@ -33,3 +33,21 @@ export function getTodosForUser(username, id){
         }
     })
 }
+
+export function updateTodoApi(username, id, todo){
+    return apiClient.put(`/api/users/${username}/todos/${id}`, todo, {
+        auth: {
+        username: "user",
+        password: "password"
+        }
+    })
+}
+
+export function createTodoApi(username, todo){
+    return apiClient.post(`/api/users/${username}/todos`, todo, {
+        auth: {
+        username: "user",
+        password: "password"
+        }
+    })
+}
