@@ -1,4 +1,4 @@
-package com.project.todo.service;
+package com.project.todo.security.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

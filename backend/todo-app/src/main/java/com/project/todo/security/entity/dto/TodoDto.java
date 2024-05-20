@@ -1,4 +1,4 @@
-package com.project.todo.dto;
+package com.project.todo.security.entity.dto;
 
 
 import lombok.AllArgsConstructor;

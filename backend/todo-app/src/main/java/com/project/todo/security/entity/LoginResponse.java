@@ -1,4 +1,4 @@
-package com.project.todo.entity;
+package com.project.todo.security.entity;
 
 public class LoginResponse {
     private String token;

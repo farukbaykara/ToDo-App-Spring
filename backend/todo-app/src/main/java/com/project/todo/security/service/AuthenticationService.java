@@ -1,9 +1,9 @@
-package com.project.todo.service;
+package com.project.todo.security.service;
 
-import com.project.todo.dto.LoginUserDto;
-import com.project.todo.dto.RegisterUserDto;
-import com.project.todo.entity.User;
-import com.project.todo.repository.UserRepository;
+import com.project.todo.security.dto.LoginUserDto;
+import com.project.todo.security.dto.RegisterUserDto;
+import com.project.todo.security.entity.User;
+import com.project.todo.security.repository.UserRepository;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -29,6 +29,10 @@ public class AuthenticationService {
 
     public User signup(RegisterUserDto input) {
         User user = new User();
+
+        if(userRepository.findByEmail(input.getEmail()).isPresent()) {
+            throw new RuntimeException("Email already exists");
+        }
 
         user.setEmail(input.getEmail());
         user.setPassword(passwordEncoder.encode(input.getPassword()));

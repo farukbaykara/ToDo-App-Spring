@@ -1,9 +1,6 @@
-package com.project.todo.entity;
+package com.project.todo.security.entity;
 
-import com.project.todo.dto.RegisterUserDto;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.security.core.GrantedAuthority;

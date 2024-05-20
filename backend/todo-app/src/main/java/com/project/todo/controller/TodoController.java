@@ -1,7 +1,7 @@
 package com.project.todo.controller;
 
 
-import com.project.todo.dto.TodoDto;
+import com.project.todo.security.entity.dto.TodoDto;
 import com.project.todo.service.TodoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

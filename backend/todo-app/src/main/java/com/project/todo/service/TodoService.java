@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-import com.project.todo.dto.TodoDto;
+import com.project.todo.security.entity.dto.TodoDto;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,5 +1,5 @@
-package com.project.todo.repository;
-import com.project.todo.entity.User;
+package com.project.todo.security.repository;
+import com.project.todo.security.entity.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

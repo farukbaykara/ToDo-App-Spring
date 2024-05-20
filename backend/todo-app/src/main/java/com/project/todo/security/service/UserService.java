@@ -1,7 +1,7 @@
-package com.project.todo.service;
+package com.project.todo.security.service;
 
-import com.project.todo.entity.User;
-import com.project.todo.repository.UserRepository;
+import com.project.todo.security.entity.User;
+import com.project.todo.security.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

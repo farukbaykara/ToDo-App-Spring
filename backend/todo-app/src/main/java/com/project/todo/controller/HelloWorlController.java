@@ -4,7 +4,7 @@ package com.project.todo.controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.project.todo.dto.HelloWorld;
+import com.project.todo.security.entity.dto.HelloWorld;
 
 @RestController
 @RequestMapping("/api")

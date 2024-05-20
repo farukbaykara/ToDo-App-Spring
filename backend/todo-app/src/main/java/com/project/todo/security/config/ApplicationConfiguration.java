@@ -1,6 +1,6 @@
-package com.project.todo.config;
+package com.project.todo.security.config;
 
-import com.project.todo.repository.UserRepository;
+import com.project.todo.security.repository.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

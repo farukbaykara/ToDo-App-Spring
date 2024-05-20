@@ -1,4 +1,4 @@
-package com.project.todo.dto;
+package com.project.todo.security.dto;
 
 public class RegisterUserDto {
     private String email;

@@ -1,11 +1,11 @@
-package com.project.todo.controller;
+package com.project.todo.security.controller;
 
-import com.project.todo.entity.User;
-import com.project.todo.dto.LoginUserDto;
-import com.project.todo.dto.RegisterUserDto;
-import com.project.todo.entity.LoginResponse;
-import com.project.todo.service.AuthenticationService;
-import com.project.todo.service.JwtService;
+import com.project.todo.security.entity.User;
+import com.project.todo.security.dto.LoginUserDto;
+import com.project.todo.security.dto.RegisterUserDto;
+import com.project.todo.security.entity.LoginResponse;
+import com.project.todo.security.service.AuthenticationService;
+import com.project.todo.security.service.JwtService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

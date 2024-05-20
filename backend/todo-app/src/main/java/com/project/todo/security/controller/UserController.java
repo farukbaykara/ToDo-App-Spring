@@ -1,8 +1,8 @@
-package com.project.todo.controller;
+package com.project.todo.security.controller;
 
 
-import com.project.todo.entity.User;
-import com.project.todo.service.UserService;
+import com.project.todo.security.entity.User;
+import com.project.todo.security.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
