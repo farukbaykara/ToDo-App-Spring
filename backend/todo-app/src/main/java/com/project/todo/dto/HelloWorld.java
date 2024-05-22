@@ -1,4 +1,4 @@
-package com.project.todo.security.entity.dto;
+package com.project.todo.dto;
 
 public class HelloWorld {
 

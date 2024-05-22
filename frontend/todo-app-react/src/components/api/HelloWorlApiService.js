@@ -7,7 +7,5 @@ export function getHelloWorld(){
 }
 
 export function getHelloWorldName(username,token){
-    return apiClient.get(`/api/hello/${username}`, {
-        headers: {Authorization: token}
-    },{})
+    return apiClient.get(`/api/hello/${username}`, {},{})
 }

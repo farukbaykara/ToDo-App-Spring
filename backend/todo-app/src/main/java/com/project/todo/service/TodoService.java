@@ -5,11 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-import com.project.todo.security.entity.dto.TodoDto;
+import com.project.todo.dto.TodoDto;
+import com.project.todo.repository.TodoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 @Service
 public class TodoService {
+
+    @Autowired
+    private TodoRepository todoRepository;
 
     private static List<TodoDto> todos = new ArrayList<>();
 
@@ -25,10 +31,15 @@ public class TodoService {
     }
 
     public List<TodoDto> findByUsername(String username){
+
+        
         Predicate<? super TodoDto> predicate =
                 todo -> todo.getUsername().equalsIgnoreCase(username);
         return todos.stream().filter(predicate).toList();
+
+        //return todoRepository.findByUsername(username);
     }
+
 
     public TodoDto addTodo(String username, String description, LocalDate targetDate, boolean done) {
         TodoDto todo = new TodoDto(++todosCount,username,description,targetDate,done);
