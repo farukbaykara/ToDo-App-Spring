@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import com.project.todo.mapper.TodoMapper;
+
 import com.project.todo.model.Todo;
 import com.project.todo.dto.TodoDto;
 import com.project.todo.repository.TodoRepository;
