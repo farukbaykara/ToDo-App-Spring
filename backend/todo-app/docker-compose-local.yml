@@ -16,15 +16,19 @@ services:
     expose:
       # Opens port 3306 on the container
       - '3306'
-  app:
-    image: 'todo-app:v1'
-    build: .
-    container_name: app
+  todo-app:
+    build:
+      context: .
+      dockerfile: ./backend/todo-app/Dockerfile
+      args:
+        - VERSION=${VERSION}
+    image: "todo-app:${VERSION}"
     ports:
       - '8080:8080'
     depends_on:
       - db
     environment:
+      SPRING_PROFILE: local
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/taskdb
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: secret
